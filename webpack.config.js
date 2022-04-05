@@ -2,6 +2,7 @@ const path = require("path");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { GitRevisionPlugin } = require("git-revision-webpack-plugin");
+const ESLintPlugin = require('eslint-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 const devServer = {
@@ -72,6 +73,10 @@ module.exports = (env, { mode }) => {
     plugins: [
       new CopyWebpackPlugin({
         patterns: [{ from: './src/htdocs', to: './' }],
+      }),
+      new ESLintPlugin({
+        extensions: ['ts', 'tsx'],
+        exclude: [path.resolve(__dirname, 'node_modules')],
       }),
       new HtmlWebpackPlugin({
         minify: false,
