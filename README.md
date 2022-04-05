@@ -20,6 +20,15 @@ npm run start
 ## 開発
 
 - typescriptを想定しています。
+- ビルド時にESLintを用いて静的解析をおこないます。
+  - 併せて、Prettierによる自動整形もおこないます。
+
+単体実行のコマンドは以下のとおりです。
+
+```sh
+npm run lint
+npm run prettier
+```
 
 ## ビルド
 
