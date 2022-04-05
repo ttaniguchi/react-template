@@ -4,7 +4,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production --progress",
-    "start": "webpack-cli serve --mode development"
+    "start": "webpack-cli serve --mode development",
+    "prettier": "prettier --write './src/**/*'"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "copy-webpack-plugin": "^10.2.4",
     "git-revision-webpack-plugin": "^5.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "prettier": "^2.6.2",
     "terser-webpack-plugin": "^5.3.1",
     "ts-loader": "^9.2.8",
     "typescript": "^4.6.3",
