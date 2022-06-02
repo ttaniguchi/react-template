@@ -26,12 +26,11 @@ npm run start
   - `src/*` ディレクトリ下は `@/*` で絶対パス表記できます。
 - CSSを取り込めるよう、loaderを追加しました。
 
-単体実行のコマンドは以下のとおりです。
-
-```sh
-npm run lint
-npm run prettier
-```
+コマンド | 内容
+---- | ----
+`npm run lint` | 静的解析をおこないます
+`npm run prettier` | 自動整形をおこないます
+`npm run format` | 静的解析の実施（fixオプション付き）と自動整形をおこないます
 
 ## ビルド
 
