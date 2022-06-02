@@ -7,7 +7,7 @@
     "start": "webpack-cli serve --mode development",
     "lint": "eslint src/js/",
     "prettier": "prettier --write './src/**/*'",
-    "format": "npm run lint --fix && npm run prettier",
+    "format": "npm run lint --fix && npm run prettier"
   },
   "repository": {
     "type": "git",
