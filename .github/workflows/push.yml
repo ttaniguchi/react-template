@@ -1,0 +1,26 @@
+name: build-test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: build
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14.x'
+          cache: npm
+      - uses: actions/cache@v3
+        id: node-cache
+        with:
+          path: |
+            ./node_modules
+          key: npm-${{ hashFiles('package-lock.json') }}
+      - run: npm install
+        if: steps.node-cache.outputs.cache-hit != 'true'
+      - run: npm run build
